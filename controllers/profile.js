@@ -45,19 +45,8 @@ const viewProfile = (req, res) => {
   })
 }
 
-//POST request for creating a profile if it doesn't exist
 const createProfile = (req, res) => {
-  db.profile.findOrCreate({
-    where: {
-      userId: req.user,
-      display_name: "George Washington",
-      gender: "male",
-      image: "",
-      city: "Washington",
-      state: "District of Columbia",
-      about_me: "I am the first president of the United States"
-    }
-  }).then((profile) => {
+  db.profile.findOrCreate(req.body).then((profile) => {
     res.status(200).json({ profile })
   })
 }
