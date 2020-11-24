@@ -14,11 +14,11 @@ const getAllProfiles = (req, res) => {
 
 // this will help us pull the user 
 // 
-const getUser = (req,res) => {
-  db.user.findByPK(req.user.dataValues.id).then((pizza) => {
-    res.json({ user: pizza})
-  })
-}
+// const getUser = (req,res) => {
+//   db.user.findByPK(req.user.dataValues.id).then((pizza) => {
+//     res.json({ user: pizza})
+//   })
+// }
 
 
 //GET request for finding your own profile 
@@ -52,9 +52,10 @@ const createProfile = (req, res) => {
 }
 
 const editProfile = (req, res) => {
-  const { displayName, gender, profilePic, city, geoState, aboutMe } = req.body
-
-  db.profile.findOrCreate({
+//  const { displayName, gender, profilePic, city, geoState, aboutMe } = req.body
+// req.body contains data 
+//req.param.id contains user id
+  db.profile.update({
     where: {
       userId: req.user.dataValues.id
     }
