@@ -13,4 +13,5 @@ router.put('/', ctrl.profile.editProfile);
 
 router.delete('/', ctrl.profile.deleteProfile);
 
+//this is what the user sees & how the backend knows what to send where
 module.exports = router

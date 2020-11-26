@@ -3,7 +3,7 @@ const db = require('../models')
 // GET request for all profiles
 
 const getAllProfiles = (req, res) => {
-  db.profile.findAll().then((foundProfiles) => {
+  db.profile.findAll().then(foundProfiles => {
     if (!foundProfiles) return res.json({
       message: 'No profiles in Database'
     })
