@@ -65,20 +65,12 @@ const createProfile = (req, res) => {
 }
 
 const editProfile = (req, res) => {
-  const { 
-    currentUserId, displayName, gender, profilePic, city, geoState, aboutMe 
-  } = req.body
-  
-  db.profile.update({
-    display_name: displayName,
-    gender: gender,
-    image: profilePic,
-    city: city,
-    state: geoState,
-    about_me: aboutMe
-  }, {
+ 
+  db.profile.update(
+    req.body
+  , {
     where: {
-      userId: currentUserId,
+      id: req.body.id,
     }
   }) 
   .then((editedProfile) => {
