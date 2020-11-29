@@ -3,7 +3,7 @@ const db = require('../models')
 // GET request for all profiles
 
 const getAllProfiles = (req, res) => {
-  db.profile.findAll().then((foundProfiles) => {
+  db.profile.findAll().then(foundProfiles => {
     if (!foundProfiles) return res.json({
       message: 'No profiles in Database'
     })
@@ -46,7 +46,6 @@ const viewProfile = (req, res) => {
   })
 }
 
-//POST request for creating a profile if it doesn't exist
 const createProfile = (req, res) => {
   const { displayName, gender, profilePic, city, geoState, aboutMe } = req.body
   console.log(`The current user is ${req.user.dataValues.id}`)
@@ -66,21 +65,12 @@ const createProfile = (req, res) => {
 }
 
 const editProfile = (req, res) => {
-  const { 
-    displayName, gender, profilePic, city, geoState, aboutMe 
-  } = req.body
-  const currentUser = req.user.id
-  
-  db.profile.update({
-    display_name: displayName,
-    gender: gender,
-    image: profilePic,
-    city: city,
-    state: geoState,
-    about_me: aboutMe
-  }, {
+ 
+  db.profile.update(
+    req.body
+  , {
     where: {
-      userId: currentUser
+      id: req.body.id,
     }
   }) 
   .then((editedProfile) => {
