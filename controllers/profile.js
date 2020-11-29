@@ -67,8 +67,9 @@ const createProfile = (req, res) => {
 
 const editProfile = (req, res) => {
   const { 
-    currentUserId, displayName, gender, profilePic, city, geoState, aboutMe 
+    displayName, gender, profilePic, city, geoState, aboutMe 
   } = req.body
+  const currentUser = req.user.id
   
   db.profile.update({
     display_name: displayName,
@@ -79,7 +80,7 @@ const editProfile = (req, res) => {
     about_me: aboutMe
   }, {
     where: {
-      userId: currentUserId,
+      userId: currentUser
     }
   }) 
   .then((editedProfile) => {

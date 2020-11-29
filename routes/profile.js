@@ -9,7 +9,7 @@ router.get('/:id', ctrl.profile.viewProfile);
 
 router.post('/edit/:id', ctrl.profile.createProfile);
 
-router.put('/', ctrl.profile.editProfile);
+router.post('/', ctrl.profile.editProfile);
 
 router.delete('/', ctrl.profile.deleteProfile);
 
