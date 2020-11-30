@@ -31,8 +31,8 @@ app.use(cors(corsOptions))
 app.use(session({
   // session is stored in the DB
   secret: "8ufshvkjzdglaurh4guesidxbfcgfrfwhioen",
-  resave: false, // will not resave sessions
-  saveUninitialized: false, // only create a session when a property is added to the session
+  resave: true, // will not resave sessions
+  saveUninitialized: true, // only create a session when a property is added to the session
   cookie: {
     maxAge: 1000 * 60 * 60 * 24,
     secure: false

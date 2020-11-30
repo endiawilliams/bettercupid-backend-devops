@@ -72,16 +72,44 @@ const checkLikeStatus = (req,res) => {
 
 const findMatches = (req, res) => {
   const currentUser = req.user.id
-  console.log('The findMatches function is working')
+  // console.log('The findMatches function is working')
 
   db.relationship.findAll({
     where: {
       userId: currentUser,
       status: 0
     }
-  }).then((matches) => {
-    console.log(matches)
-    res.json(matches)
+  }).then((userLikes) => {
+    let allRecipients = []
+    
+    for (let i = 0; i < userLikes.length; i++) {
+      allRecipients.push(userLikes[i].dataValues.recipient)
+    }
+
+    db.relationship.findAll({
+      where: {
+        userId: allRecipients,
+        recipient: currentUser,
+        status: 0
+      }
+    }).then((matches) => {
+      let allMatches = []
+      
+      for (let i = 0; i < matches.length; i++) {
+        allMatches.push(matches[i].dataValues.userId)
+      }
+
+      db.profile.findAll({
+        where: {
+          userId: allMatches,
+        }
+      }).then((matchProfiles) => {
+        console.log(matchProfiles)
+        res.json(matchProfiles)
+      })
+    })
+    // console.log(matches)
+    // res.json(matches)
   })
 }
 
