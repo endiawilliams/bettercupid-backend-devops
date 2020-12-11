@@ -18,36 +18,36 @@
 * As a user I can report negative interactions
 
 ## Wire Frames
-![Landing Page](public/images/image.png)
+![Landing Page](https://raw.githubusercontent.com/astudillome/BetterCupid-pern-auth-frontend/main/public/images/image.png)
 
-![Sign Up Page](public/images/image4.png)
+![Sign Up Page](https://raw.githubusercontent.com/astudillome/BetterCupid-pern-auth-frontend/main/public/images/image4.png)
 
-![Sign In Page](public/images/image5.png)
+![Sign In Page](https://raw.githubusercontent.com/astudillome/BetterCupid-pern-auth-frontend/main/public/images/image5.png)
 
-![Profile Page](public/images/image2.png)
+![Profile Page](https://raw.githubusercontent.com/astudillome/BetterCupid-pern-auth-frontend/main/public/images/image2.png)
 
-![Browse Page](public/images/image1.png)
+![Browse Page](https://raw.githubusercontent.com/astudillome/BetterCupid-pern-auth-frontend/main/public/images/image1.png)
 
-![Matches Page](public/images/image3.png)
+![Matches Page](https://raw.githubusercontent.com/astudillome/BetterCupid-pern-auth-frontend/main/public/images/image3.png)
 
 ## ERD
-![ERD](public/images/ERD.png)
+![ERD](https://raw.githubusercontent.com/astudillome/BetterCupid-pern-auth-frontend/main/public/images/ERD.png)
 
 ## Code Snipets
-![code](public/images/code1.png)
+![code](https://raw.githubusercontent.com/astudillome/BetterCupid-pern-auth-frontend/main/public/images/code1.png)
 
-![code](public/images/code2.png)
+![code](https://raw.githubusercontent.com/astudillome/BetterCupid-pern-auth-frontend/main/public/images/code2.png)
 
-![code](public/images/code3.png)
+![code](https://raw.githubusercontent.com/astudillome/BetterCupid-pern-auth-frontend/main/public/images/code3.png)
 
 ## App
-![app](public/images/app3.png)
+![app](https://raw.githubusercontent.com/astudillome/BetterCupid-pern-auth-frontend/main/public/images/app3.png)
 
-![app](public/images/app2.png)
+![app](https://raw.githubusercontent.com/astudillome/BetterCupid-pern-auth-frontend/main/public/images/app2.png)
 
-![app](public/images/app1.png)
+![app](https://raw.githubusercontent.com/astudillome/BetterCupid-pern-auth-frontend/main/public/images/app1.png)
 
-![app](public/images/app4.png)
+![app](https://raw.githubusercontent.com/astudillome/BetterCupid-pern-auth-frontend/main/public/images/app4.png)
 
 ## Technology Utilized
 * React
