@@ -31,6 +31,7 @@ app.use(cors(corsOptions))
 app.use(session({
   // session is stored in the DB
   secret: "8ufshvkjzdglaurh4guesidxbfcgfrfwhioen",
+  // these are false in the repo on GitHub, this is to solve the CORS bug causing session corruption
   resave: true, // will not resave sessions
   saveUninitialized: true, // only create a session when a property is added to the session
   cookie: {
