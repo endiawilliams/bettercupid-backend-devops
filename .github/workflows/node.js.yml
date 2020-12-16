@@ -34,6 +34,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - run: apt-get update
     - name: Install PostgreSQL
       run: apt-get install postgresql-client
     - name: Initialize database
