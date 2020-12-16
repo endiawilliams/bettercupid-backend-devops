@@ -1,17 +1,23 @@
 {
-  "development": {
-    "database": "better_cupid_dev",
-    "host": "127.0.0.1",
-    "dialect": "postgres"
-  },
-  "test": {
-    "database": "better_cupid_dev",
-    "host": "127.0.0.1",
-    "dialect": "postgres"
-  },
-  "production": {
-    "database": "better_cupid_dev",
-    "host": "127.0.0.1",
-    "dialect": "postgres"
-  }
+    "development": {
+      "username": "postgres",
+      "password": null,
+      "database": "better_cupid_dev",
+      "host": "db",
+      "dialect": "postgres"
+    },
+    "test": {
+      "username": "postgres",
+      "password": null,
+      "database": "better_cupid_dev",
+      "host": "db",
+      "dialect": "postgres"
+    },
+    "production": {
+      "username": "postgres",
+      "password": null,
+      "database": "better_cupid_dev",
+      "host": "db",
+      "dialect": "postgres"
+    }
 }

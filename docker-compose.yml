@@ -1,0 +1,15 @@
+# Use postgres/example user/password credentials
+version: "3.8"
+services:
+    db:
+        image: postgres
+        # restart: always
+        environment: 
+            POSTGRES_HOST_AUTH_METHOD: trust
+            POSTGRES_DB: better_cupid_dev
+        volumes:
+            - ./data/postgres:/var/lib/postgresql/data # persist data even if container shuts down
+    node:
+        build: .
+        ports:
+            - "4000:4000"
