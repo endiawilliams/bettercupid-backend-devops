@@ -13,6 +13,20 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    
+    container: node
+    
+    services:
+      db:
+        image: postgres
+        env:
+          POSTGRES_HOST_AUTH_METHOD: trust
+          POSTGRES_DB: better_cupid_dev
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
 
     strategy:
       matrix:
@@ -20,6 +34,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Initialize database
+      run: psql -U postgres better_cupid_dev < better_cupid_db.sql
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
