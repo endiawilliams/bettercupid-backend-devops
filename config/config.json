@@ -15,7 +15,7 @@
     },
     "production": {
       "username": "postgres",
-      "password": null,
+      "password": process.env.DB_PASS,
       "database": "better_cupid_dev",
       "host": "db",
       "dialect": "postgres"
