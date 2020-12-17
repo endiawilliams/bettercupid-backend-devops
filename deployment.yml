@@ -28,6 +28,8 @@ spec:
           runAsNonRoot: true
       - name: gke-test
         env:
+        - name: NODE_ENV
+          value: "production"
         - name: DB_PASS
           valueFrom:
             secretKeyRef:

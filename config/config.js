@@ -18,7 +18,7 @@ module.exports = {
       "username": "postgres",
       "password": process.env.DB_PASS,
       "database": "better_cupid_dev",
-      "host": "db",
+      "host": "localhost",
       "dialect": "postgres"
     }
 }
