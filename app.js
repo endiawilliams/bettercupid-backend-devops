@@ -19,7 +19,7 @@ app.use(express.json())
 // middleware - cors
 const corsOptions = {
   // from which URLs do we want to accept requests
-  // origin: ['http://localhost:3000'],
+  origin: ['http://34.122.25.56'],
   credentials: true, // allow the session cookie to be sent to and from the client
   optionsSuccessStatus: 204
 }
