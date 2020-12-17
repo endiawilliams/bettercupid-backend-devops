@@ -17,8 +17,22 @@ spec:
       labels:
         app: gke-test
     spec:
+      serviceAccountName: default
       containers:
+      - name: cloud-sql-proxy
+        image: gcr.io/cloudsql-docker/gce-proxy:1.17
+        command:
+          - "/cloud_sql_proxy"
+          - "-instances=logical-stacker-298902:us-central1:better-cupid-db=tcp:5432"
+        securityContext:
+          runAsNonRoot: true
       - name: gke-test
+        env:
+        - name: DB_PASS
+          valueFrom:
+            secretKeyRef:
+              name: cupid-secret
+              key: password
         image: gcr.io/PROJECT_ID/IMAGE:TAG
         ports:
         - containerPort: 4000
@@ -27,3 +41,4 @@ spec:
             cpu: 100m
           limits:
             cpu: 100m
+            
