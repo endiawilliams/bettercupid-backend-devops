@@ -19,8 +19,8 @@ app.use(express.json())
 // middleware - cors
 const corsOptions = {
   // from which URLs do we want to accept requests
-  origin: 'http://localhost:3000',
-  credentials: true, // allow the session cookie to be sent to and from the client
+  origin: (process.env.NODE_ENV == "production") ? 'http://bettercupid.endia.dev' : 'http://localhost.localdomain:3000',
+  credentials: true, 
   optionsSuccessStatus: 204
 }
 
@@ -29,13 +29,12 @@ app.use(cors(corsOptions))
 // middleware - session config
 app.use(session({
   // session is stored in the DB
-  secret: "8ufshvkjzdglaurh4guesidxbfcgfrfwhioen",
-  // these are false in the repo on GitHub, this is to solve the CORS bug causing session corruption
-  resave: true, // will not resave sessions
-  saveUninitialized: true, // only create a session when a property is added to the session
+  secret: process.env.COOKIE_SECRET || 'fnord C97445F4 5CDEF9F0',
+  resave: false, 
+  saveUninitialized: false, 
   cookie: {
     maxAge: 1000 * 60 * 60 * 24,
-    secure: false
+    secure: process.env.NODE_ENV == "production"
   }
 }))
 

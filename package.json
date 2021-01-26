@@ -14,9 +14,11 @@
     "nodemon": "^2.0.4",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
-    "pg": "^8.4.2",
+    "pg": "^8.5.1",
     "react-google-recaptcha": "^2.1.0",
-    "sequelize": "^6.3.5"
+    "sequelize": "^6.4.0",
+    "sequelize-cli": "^6.2.0",
+    "wait-port": "^0.2.9"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

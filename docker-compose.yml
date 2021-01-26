@@ -8,8 +8,12 @@ services:
             POSTGRES_HOST_AUTH_METHOD: trust
             POSTGRES_DB: better_cupid_dev
         volumes:
-            - ./data/postgres:/var/lib/postgresql/data # persist data even if container shuts down
+            - postgres_data:/var/lib/postgresql/data # persist data even if container shuts down
     node:
         build: .
+        environment:
+            - NODE_ENV=test
         ports:
             - "4000:4000"
+volumes:
+    postgres_data:

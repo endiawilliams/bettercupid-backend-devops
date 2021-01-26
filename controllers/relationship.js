@@ -15,7 +15,7 @@ const db = require('../models')
 
 const likeUser = (req, res) => {
   const recipientId = req.params.id
-  const { currentUser } = req.body
+  const currentUser = req.user.id
   const likeStatus = 0
 
   console.log(`The recipientId is ${recipientId}`)
@@ -36,7 +36,7 @@ const likeUser = (req, res) => {
 //DELETE request to remove a like
 const unlikeUser = (req, res) => {
   const recipientId = req.params.id
-  const { currentUser } = req.body
+  const currentUser = req.user.id
   const likeStatus = 0
 
   db.relationship.destroy({
