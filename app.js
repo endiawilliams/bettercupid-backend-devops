@@ -19,7 +19,7 @@ app.use(express.json())
 // middleware - cors
 const corsOptions = {
   // from which URLs do we want to accept requests
-  origin: (process.env.NODE_ENV == "production") ? 'http://bettercupid.endia.dev' : 'http://localhost.localdomain:3000',
+  origin: (process.env.NODE_ENV == "production") ? 'https://bettercupid.endia.dev' : 'http://localhost.localdomain:3000',
   credentials: true, 
   optionsSuccessStatus: 204
 }

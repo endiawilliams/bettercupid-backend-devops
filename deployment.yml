@@ -35,6 +35,11 @@ spec:
             secretKeyRef:
               name: cupid-secret
               key: password
+        - name: COOKIE_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: cupid-secret
+              key: cookies
         image: gcr.io/PROJECT_ID/IMAGE:TAG
         ports:
         - containerPort: 4000
