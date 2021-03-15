@@ -9,10 +9,9 @@ const config = require(__dirname + '/config/config.js')[env];
 
 const params = {};
 
-const url = require('url')
 params.port = 5432;
 if (config.use_env_variable) {
-    params.host = url(process.env[config.use_env_variable]).host
+    params.host = URL(process.env[config.use_env_variable]).host
 } else {
     params.host = config.host;
 }
