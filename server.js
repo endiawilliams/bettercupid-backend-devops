@@ -12,7 +12,7 @@ const params = {};
 params.port = 5432;
 if (config.use_env_variable) {
     myURL = new URL(process.env[config.use_env_variable]);
-    params.host = myURL.host;
+    params.host = myURL.hostname;
 } else {
     params.host = config.host;
 }
