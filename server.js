@@ -13,7 +13,7 @@ const url = require('url')
 params.port = 5432;
 if (config.use_env_variable) {
     params.host = url(process.env[config.use_env_variable]).host
-else {
+} else {
     params.host = config.host;
 }
 
