@@ -35,6 +35,6 @@ if (config.use_env_variable) {
         migrate.stderr.pipe(process.stderr);
     });
 
-    // connection
-    app.listen(port, () => console.log(`Server is running on port ${port}`))
 })();
+
+app.listen(port, () => console.log(`Server is running on port ${port}`))
