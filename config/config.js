@@ -1,10 +1,7 @@
 require('dotenv').config()
 module.exports = {
     "development": {
-      "username": "root",
-      "password": null,
-      "database": "better_cupid_dev",
-      "host": "localhost",
+      "use_env_variable": "DATABASE_URL",
       "dialect": "postgres"
     },
     "test": {

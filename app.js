@@ -10,7 +10,7 @@ const passport = require('./passport')
 
 const app = express() 
 // trust proxy in production
-if (process.env.NODE_ENV == "production") {app.set('trust proxy', 1)}
+//if (process.env.NODE_ENV == "production") {app.set('trust proxy', 1)}
 
 // middleware - server logging
 app.use(morgan('dev'))
