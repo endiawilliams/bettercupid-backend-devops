@@ -11,7 +11,8 @@ const params = {};
 
 params.port = 5432;
 if (config.use_env_variable) {
-    params.host = URL(process.env[config.use_env_variable]).host
+    myURL = new URL(process.env[config.use_env_variable]);
+    params.host = myURL.host;
 } else {
     params.host = config.host;
 }
