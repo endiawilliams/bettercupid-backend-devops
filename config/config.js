@@ -1,7 +1,10 @@
 require('dotenv').config()
 module.exports = {
     "development": {
-      "use_env_variable": "DATABASE_URL",
+      "username": "root",
+      "password": null,
+      "database": "better_cupid_dev",
+      "host": "localhost",
       "dialect": "postgres"
     },
     "test": {
@@ -12,10 +15,10 @@ module.exports = {
       "dialect": "postgres"
     },
     "production": {
-      "username": "postgres",
-      "password": process.env.DB_PASS,
-      "database": "better_cupid_dev",
-      "host": "localhost",
-      "dialect": "postgres"
+      "use_env_variable": "DATABASE_URL",
+      "dialect": "postgres",
+       "dialectOptions": {
+        "ssl": true
+    }
     }
 }
